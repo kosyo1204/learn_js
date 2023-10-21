@@ -97,3 +97,70 @@
 //   (login == 'Director') ? 'Greetings' :
 //   (login == '') ? 'No login' : '';
 
+// logical operators
+// alert( null || 2 || undefined ); // 2
+// alert( alert(1) || 2 || alert(3) ); //1 -> 2の順に表示される。
+// alertを読んだ結果はundefiendとなるが、alert自体は実行されるため、1。
+// alert( 1 && null && 2 ); // null falseとなる場合の値を返却する
+// alert( alert(1) && alert(2) ); //1 -> undefined
+// alert( null || 2 && 3 || 4 ); // 3
+// 包括的に age が 14 と 90 の間かをチェックする if 条件を書きなさい。
+// “包括的に” は age が 14 または 90 の端に到達できることを意味します。
+// if (age >= 14 && age <= 90) {}
+// if (!(age >= 14 && age <= 90)) {}
+// if (age < 14 || age > 90) {}
+
+// if (-1 || 0) alert( 'first' ); true
+// if (-1 && 0) alert( 'second' ); false
+// if (null || -1 && 1) alert( 'third' ); true
+
+// loop
+// let i = 3;
+// while (i) {
+//   alert( i-- );
+// }
+// 最後は1。次のイテレーションでは0で、0はfalseを意味するため。
+
+// let i = 0;
+// while (++i < 5) alert( i );
+// // 1 ~ 4
+// let i = 0;
+// while (i++ < 5) alert( i );
+// // 1 ~ 5
+// // プレフィックス、ポストフィックス
+
+// for (let i = 0; i < 5; i++) alert( i );
+// for (let i = 0; i < 5; ++i) alert( i );
+// // 同じ0~4。stepが入るため。前の問題は評価のために使っているが、ここでは異なる。
+
+// for (let i = 2; i <= 10; i++) {
+//   if (i % 2 === 0) { 
+//     alert(i);
+//   };
+// }
+
+// for (let i = 0; i < 3; i++) {
+//   alert( `number ${i}!` );
+// }
+// let i = 0
+// while(i < 3) {
+//   alert(`number ${i}!`);
+//   i++;
+// }
+
+// let input = prompt('number', '');
+// while (input <= 100) { continue; };
+// // エンドレスで処理が走る
+
+// let num;
+// do {
+//   num = prompt("number", 0);
+// } while (num <= 100 && num);
+// 入力値を使ってループさせるときは do whileがいいのかも。
+
+// for (let n=2; n < 10; n++) {
+//   if (n == 2) {return n};
+//   if (n % 2 == 0 ) { continue };
+//   if (n % 3 == 0 ) { continue };
+// }
+// 素数の範囲を絞らなければ難易度高すぎるのでは。。
