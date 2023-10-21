@@ -69,3 +69,31 @@
 // null == "\n0\n" false
 // null === +"\n0\n" false
 
+// 条件分岐
+// if ("0") {
+//   alert( 'Hello' );
+// } 
+// 文字列なので表示される。数字の0なら表示されない。
+
+// const answer = prompt("What's the “official” name of JavaScript?", "");
+// if (answer == 'ECMAScript') {
+//   alert('Right!');
+// } else {
+//   alert("You don't know? “ECMAScript”!");
+// };
+
+// const input = prompt('Type a number', '0');
+// if (input == 0) {
+//   alert(0);
+// } else if (input > 0) {
+//   alert(1);
+// } else {
+//   alert(-1);
+// }
+
+// let result = (a + b < 4) ? 'Below' : 'Over';
+
+// let message = (login == 'Employee') ? 'Hello' :
+//   (login == 'Director') ? 'Greetings' :
+//   (login == '') ? 'No login' : '';
+
