@@ -214,3 +214,73 @@
 //     alert( '2,3' );
 //     break;
 // };
+
+// function
+// function checkAge(age) {
+//   if (age > 18) {
+//     return true;
+//   } else {
+//     // ...
+//     return confirm('Did parents allow you?');
+//   }
+// }
+// // もし else が削除された場合、この関数は違う動きになるでしょうか？
+
+// function checkAge(age) {
+//   if (age > 18) {
+//     return true;
+//   }
+//   // ...
+//   return confirm('Did parents allow you?');
+// }
+// // これら2つのバリアントの振る舞いで何か違いはあるでしょうか？
+// // 違いはない。
+
+// function checkAge(age) {
+//   if (age > 18) {
+//     return true;
+//   } else {
+//     return confirm('Do you have your parents permission to access this page?');
+//   }
+// }
+// // 1
+// function checkAge(age) {
+//   return (age > 18) ? true : confirm('Do you have your parents permission to access this page?');
+// };
+//2
+// function checkAge(age) {
+//   return (age > 18) || confirm('Do you have your parents permission to access this page?');
+// };
+// console.log(checkAge(19));
+
+// 2つの数値 a と b で小さい方を返す関数 min(a,b) を書きなさい。
+// 例:
+// function min(a, b) {
+//   let result = (a < b) ? a : b;
+//   console.log(result);
+// }
+// min(2, 5);
+// min(3, -1);
+// min(1, 1);
+
+// function pow(x, n) {
+//   return x ** n;
+// }
+// let x = prompt('x?');
+// let n = prompt('n?');
+// console.log(pow(x, n));
+// function pow(x, n){
+//   let result = x;
+//   for (let i=1; i < n; i++) {
+//     result *= x;
+//   }
+//   return result;
+// }
+// let x = prompt('x?', '');
+// let n = prompt('n?', '');
+// if (n <= 1) {
+//   alertt(`Power  ${n} is not supported.`);
+// } else  {
+//   alert(pow(x, n));
+// }
+
