@@ -417,20 +417,42 @@
 // let user = makeUser();
 // alert( user.ref().name ); // John
 
-let calculator = {
-  read() {
-    this.a = Number(prompt('a?', 0));
-    this.b = Number(prompt('b?', 0));
-  },
-  sum() {
-    return(this.a + this.b);
-  },
-  mul() {
-    return(this.a * this.b);
-  },
-};
-calculator.read();
-alert( calculator.sum() );
-alert( calculator.mul() );
+// let calculator = {
+//   read() {
+//     this.a = Number(prompt('a?', 0));
+//     this.b = Number(prompt('b?', 0));
+//   },
+//   sum() {
+//     return(this.a + this.b);
+//   },
+//   mul() {
+//     return(this.a * this.b);
+//   },
+// };
+// calculator.read();
+// alert( calculator.sum() );
+// alert( calculator.mul() );
 
 // chain
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep: function() { // 現在の段を表示します
+    alert( this.step );
+  }
+};
+
+// ladder.up();
+// ladder.up();
+// ladder.down();
+// ladder.showStep();
+
+// オブジェクト自身をreturnすればOK
+ladder.up().up().down().showStep(); // 1
