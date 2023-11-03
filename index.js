@@ -332,5 +332,59 @@
 // }
 // alert( pow(x, n) );
 
-// BDD ビヘイビア駆動開発
+// object
+// Helllo, object
+// let user = {};
+// user.name = 'John';
+// user.surname = 'Smith';
+// user.name = 'Pete';
+// delete user.name;
 
+// check empty
+// function isEmpty(obj) {
+//   let isEmpty = true;
+//   for(let key in obj) {
+//     if(key in obj) {isEmpty = false};
+//   }
+//   return isEmpty;
+// }
+// function isEmpty(obj) {
+//   // プロパティがあればブロック内の処理が走るので、returnを返す
+//   for(let key in obj) {
+//     return false;
+//   }
+//   return true;
+// }
+
+// sum obj property
+// let salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130
+// }
+// let sum = 0;
+// for(key in salaries) {
+//   sum += salaries.key;
+// }
+// return sum;
+
+// function multiplyNumeric(obj) {
+//   for(let key in obj) {
+//     if (typeof(obj[key]) === 'number') {
+//       obj[key] *= 2;
+//     }
+//   }
+// }
+// // 呼び出し前
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu"
+// };
+// multiplyNumeric(menu);
+// // // 呼び出し後
+// // menu = {
+// //   width: 400,
+// //   height: 600,
+// //   title: "My menu"
+// // };
