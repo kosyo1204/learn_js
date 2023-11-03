@@ -388,3 +388,49 @@
 // //   height: 600,
 // //   title: "My menu"
 // // };
+
+// // this
+// function makeUser() {
+//   return {
+//     name: "John",
+//     ref: this
+//   };
+// };
+// let user = makeUser();
+// alert( user.ref.name ); // John
+// // makeUserの実行結果をuserに定義
+// // refにはthisが定義されており、このthisには、userが含まれる
+// // そのため、user.ref = userで、user.nameとなるため、Johnがリターンされる
+
+// /*
+// * makeUserの中のthisの値はundefined。thisはメソッドとして呼ばれた時には値が定義されるが、関数として呼ばれたときはundefinedとなるため。
+// * 以下であれば、refはメソッドとなるため、Johnを返す
+// */
+// function makeUser() {
+//   return {
+//     name: "John",
+//     ref(){
+//       return this;
+//     }
+//   };
+// };
+// let user = makeUser();
+// alert( user.ref().name ); // John
+
+let calculator = {
+  read() {
+    this.a = Number(prompt('a?', 0));
+    this.b = Number(prompt('b?', 0));
+  },
+  sum() {
+    return(this.a + this.b);
+  },
+  mul() {
+    return(this.a * this.b);
+  },
+};
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+
+// chain
