@@ -434,25 +434,66 @@
 // alert( calculator.mul() );
 
 // chain
-let ladder = {
-  step: 0,
-  up() {
-    this.step++;
-    return this;
-  },
-  down() {
-    this.step--;
-    return this;
-  },
-  showStep: function() { // 現在の段を表示します
-    alert( this.step );
-  }
-};
+// let ladder = {
+//   step: 0,
+//   up() {
+//     this.step++;
+//     return this;
+//   },
+//   down() {
+//     this.step--;
+//     return this;
+//   },
+//   showStep: function() { // 現在の段を表示します
+//     alert( this.step );
+//   }
+// };
 
-// ladder.up();
-// ladder.up();
-// ladder.down();
-// ladder.showStep();
+// // ladder.up();
+// // ladder.up();
+// // ladder.down();
+// // ladder.showStep();
 
-// オブジェクト自身をreturnすればOK
-ladder.up().up().down().showStep(); // 1
+// // オブジェクト自身をreturnすればOK
+// ladder.up().up().down().showStep(); // 1
+
+// コンストラクタ、new演算子
+// let obj = {};
+// function A() { return obj }
+// function B() { return obj }
+
+// let a = new A();
+// let b = new B();
+
+// alert( a == b ); // true
+// function Calculator() {
+//   this.read = function() {
+//     this.a = Number(prompt('a?', 0));
+//     this.b = Number(prompt('b?', 0));
+//   }
+//   this.sum = function() {
+//     return this.a + this.b;
+//   }
+//   this.mul = function() {
+//     return this.a * this.b;
+//   }
+// }
+
+// let calculator = new Calculator();
+// calculator.read();
+
+// alert( "Sum=" + calculator.sum() );
+// alert( "Mul=" + calculator.mul() );
+// // コンストラクタ関数でreturnする時は、プリミティブだと無視されるのでは？
+// // コンストラクタ内のメソッドでreturnしているためにプリミティブでも返せている？
+
+// function Accumulator(startingValue) {
+//   this.value = startingValue;
+//   this.read = function() {
+//     this.value += +prompt('How much to add?', 0);
+//   }
+// }
+// let accumulator = new Accumulator(1); // 初期値 1
+// accumulator.read(); // ユーザの入力値の加算
+// accumulator.read(); // ユーザの入力値の加算
+// alert(accumulator.value); // それらの値の合計を表示
