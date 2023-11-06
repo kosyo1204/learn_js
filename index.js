@@ -497,3 +497,9 @@
 // accumulator.read(); // ユーザの入力値の加算
 // accumulator.read(); // ユーザの入力値の加算
 // alert(accumulator.value); // それらの値の合計を表示
+
+// // methods of primitive
+// let str = "Hello";
+// str.test = 5;
+// alert(str.test);
+// // primitiveはオブジェクトではないためエラーとなるか、
