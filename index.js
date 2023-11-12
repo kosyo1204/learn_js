@@ -503,3 +503,54 @@
 // str.test = 5;
 // alert(str.test);
 // // primitiveはオブジェクトではないためエラーとなるか、
+
+// callback
+// loadScript(script_file, function(error, script) {
+//   if (error) {
+//     handleError(error);
+//   } else {
+//     loadScript(script_file2, function(error, script) {
+//       if (error) {
+//         handleError(error);
+//       } else {
+//         loadScript(script_file3, function(error, script) {
+//           if (error) {
+//             handleError(error);
+//           } else {
+//             // ...
+//           }
+//         })
+//       }
+//     })
+//   }
+// })
+
+
+// promise
+let promise = new Promise(function(resolve, reject) {
+  // promiseが作られたとき、関数は自動実行。
+  // 1秒後、ジョブがdone!という結果と一緒に完了したことを合図
+  setTimeout(() => resolve("done!"), 1000);
+  setTimeout(() => reject(new Error("Whoops!")), 1000);
+});
+
+promise.then(
+  function(result) {},
+  function(error){}
+);
+
+let promise = new Promise(function(resolve, reject) {
+  setTimeout(() => resolve("done!"), 1000);
+});
+promise.then(
+  result => alert(result),
+  error => alert(error)
+);
+
+new Promise((resolve, reject) => {
+
+})
+
+  .finally(() => 停止)
+  .then(result => disp result, err => disp err)
+
