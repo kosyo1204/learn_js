@@ -527,30 +527,81 @@
 
 
 // promise
-let promise = new Promise(function(resolve, reject) {
-  // promiseが作られたとき、関数は自動実行。
-  // 1秒後、ジョブがdone!という結果と一緒に完了したことを合図
-  setTimeout(() => resolve("done!"), 1000);
-  setTimeout(() => reject(new Error("Whoops!")), 1000);
-});
-
-promise.then(
-  function(result) {},
-  function(error){}
-);
-
-let promise = new Promise(function(resolve, reject) {
-  setTimeout(() => resolve("done!"), 1000);
-});
-promise.then(
-  result => alert(result),
-  error => alert(error)
-);
-
+// finally
 new Promise((resolve, reject) => {
 
 })
+// thenの前にstop
+// .finally(() => stop)
+// .then(result => value, err => err);
 
-  .finally(() => 停止)
-  .then(result => disp result, err => disp err)
+// new Promise((resolve, reject) => {
+//   setTimeout(() => resolve("result"), 2000)
+// })
+//   .finally(() => alert("Promise ready"))
+//   .then(result => alert(result));
 
+// new Promise((resolve, reject) => {
+//   throw new Error("error");
+// })
+//   .finally(() => alert("Promise ready"))
+//   .catch (err => alert(err));
+
+// function loadScript(src) {
+//   return new Promise(function(resolve, reject) {
+//     let script = document.createElement('script');
+//     script.src = src;
+
+//     script.onload = () => resolve(script);
+//     script.onerror = () => reject(new Error("Script load error: " + src));
+
+//     document.head.append(script);
+//   });
+// }
+
+// let promise = loadScript(url);
+// promise.then(
+//   script => alert(script.src),
+//   error => alert(error.message)
+// );
+// promise.then(script => alert(''));
+
+// // promiseの再resolve?
+// let promise = new Promise(function(resolve, reject) {
+//   resolve(1);
+//   setTimeout(() => resolve(2), 1000);
+// });
+// promise.then(alert);
+// // executorによる実行結果は1つだけなので、最初のresolveによって渡されたvalueが使われる
+// // そのため、1がreturn
+
+// promiseでの遅延
+// function delay(ms) {
+//   // return new Promise(function(resolve, reject) {
+//   //   resolve(ms);
+//   // })
+  
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
+// delay(3000).then(() => alert('runs after 3 seconds'));
+
+// Promise chain
+// new Promise(function(resolve, reject) {
+//   setTimeout(() => resolve(1), 1000);
+// }).then(function(result) {
+//   return result *2;
+// }).then(function(result) {
+//   alert(result);
+//   return result *2;
+// }).then(function(result) {
+//   alert(result);
+//   return result *2;
+// });
+
+// Promise: then vs catch
+// promise.then(f1, f2);
+// promise.then(f1).catch(f2);
+/*
+* 2つ目はf1の結果を受けてエラーとなった場合に実行されるが、
+* 1つ目はf1の結果を受けず、エラー処理はなされない。
+*/
