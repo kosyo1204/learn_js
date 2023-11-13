@@ -605,3 +605,26 @@ new Promise((resolve, reject) => {
 * 2つ目はf1の結果を受けてエラーとなった場合に実行されるが、
 * 1つ目はf1の結果を受けず、エラー処理はなされない。
 */
+
+// hadling error of promise
+// fetch(url)
+//   .then(res => res.json())
+//   .then(user => fetch(url))
+//   .then(res => res.json())
+//   .then(githubUser => new Promise((resolve, reject) => {
+//     let img = document.createElement('img');
+//     img.src = githubUser.avatar_url;
+//     img.className = "promise";
+//     document.body.append(img);
+
+//     setTimeout(() => {
+//       img.remove();
+//       resolve(githubUser);
+//     }, 3000);
+//   }))
+//   // 全エラーをcatchしたい時
+//   .catch(err => alert(err.message));
+
+// promise site method
+
+
